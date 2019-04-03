@@ -1,4 +1,5 @@
 import sys
+import os
 # DISCLAIMER #
 # print('DISCLAIMER:\n'
 #       'Wizards of the Coast, Dungeons & Dragons, D&D, and their logos are\n'
@@ -9,11 +10,20 @@ import sys
 #       'More information can be found at: http://dnd.wizards.com/\n'
 #       )
 # print('#################################################################################\n')
+
+
+# VARIABLES #
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
+# PROGRAM #
 print('\nWelcome, adventurer, to Dungeons & Dragons!\n')
 
-player_info = {'race': 'human',
+player_info = {'race': 'dwarf',
+               'subrace': 'hill dwarf',
                'class': 'fighter',
-               'background': 'folk hero'
+               'background': 'folk hero',
                }
 player_stats = {'hp': 10,
                 'ac': 0,
@@ -24,14 +34,14 @@ player_stats = {'hp': 10,
                 'wis': 0,
                 'cha': 0,
                 'languages': [
-                    'common'
+                    'common',
                 ],
                 'proficiencies': {
                     'weapons': [],
                     'skills': [],
                 },
                 'resistances_immunities': [],
-                'special': []
+                'special': [],
                 }
 
 
@@ -50,7 +60,39 @@ def race_menu():
     print('T - Tiefling')
 
 
-# DRACONIC ANCESTRY MENU #
+def ancestry_menu():
+    print('\nCHOOSE WISELY')
+    print('\nDraconic Ancestry:')
+    print('B - Black Dragon')
+    print('L - Blue Dragon')
+    print('R - Brass Dragon')
+    print('O - Bronze Dragon')
+    print('C - Copper Dragon')
+    print('G - Gold Dragon')
+    print('E - Green Dragon')
+    print('S - Silver Dragon')
+    print('W - White Dragon')
+
+
+dragonborn_info = '\nTHE DRAGONBORN:\n'\
+                  'Dragonborn look very much like dragons standing erect\n' \
+                  'in humanoid form, though they lack wings or a tail.\n'
+
+dwarf_info = '\nTHE DWARF:\n'\
+
+elf_info = '\nTHE ELF:\n'\
+
+gnome_info = '\nTHE GNOME:\n'\
+
+half_elf_info = '\nTHE HALF_ELF:\n'\
+
+halfling_info = '\nTHE HALFING:\n'\
+
+half_orc_info = '\nTHE HALF-ORC:\n'\
+
+human_info = '\nTHE HUMAN:\n'\
+
+tiefling_info = '\nTHE TIEFLING:\n'\
 
 
 
@@ -62,129 +104,275 @@ while True:
 
     # dragonborn
     if race_input == 'd' or race_input == 'D':
+        print(dragonborn_info)
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             race_menu()
             race_input = str(input('Select a race for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Dragonborn selected!')
-            player_info['race'] = 'dragonborn'
-            print(player_info)
-            break
+
+            # DRACONIC ANCESTRY MENU #
+            ancestry_menu()
+            ancestry_input = str(input('Select an ancestry:\n'))
+            while True:
+
+                # black
+                if ancestry_input == 'b' or ancestry_input == 'B':
+                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    if back_or_select == 'b' or back_or_select == 'B':
+                        clear_screen()
+                        ancestry_menu()
+                        ancestry_input = str(input('Select a race for more information:\n'))
+                    elif back_or_select == 's' or back_or_select == 'S':
+                        clear_screen()
+                        print('Black dragon ancestry selected!')
+                        player_info['subrace'] = 'black dragon'
+                        break
+
+                # blue
+                elif ancestry_input == 'l' or ancestry_input == 'L':
+                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    if back_or_select == 'b' or back_or_select == 'B':
+                        clear_screen()
+                        ancestry_menu()
+                        ancestry_input = str(input('Select a race for more information:\n'))
+                    elif back_or_select == 's' or back_or_select == 'S':
+                        clear_screen()
+                        print('Blue dragon ancestry selected!')
+                        player_info['subrace'] = 'blue dragon'
+                        break
+
+                # brass
+                elif ancestry_input == 'r' or ancestry_input == 'R':
+                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    if back_or_select == 'b' or back_or_select == 'B':
+                        clear_screen()
+                        ancestry_menu()
+                        ancestry_input = str(input('Select a race for more information:\n'))
+                    elif back_or_select == 's' or back_or_select == 'S':
+                        clear_screen()
+                        print('Brass dragon ancestry selected!')
+                        player_info['subrace'] = 'brass dragon'
+                        break
+
+                # bronze
+                elif ancestry_input == 'o' or ancestry_input == 'O':
+                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    if back_or_select == 'b' or back_or_select == 'B':
+                        clear_screen()
+                        ancestry_menu()
+                        ancestry_input = str(input('Select a race for more information:\n'))
+                    elif back_or_select == 's' or back_or_select == 'S':
+                        clear_screen()
+                        print('Bronze dragon ancestry selected!')
+                        player_info['subrace'] = 'bronze dragon'
+                        break
+
+                # copper
+                elif ancestry_input == 'c' or ancestry_input == 'C':
+                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    if back_or_select == 'b' or back_or_select == 'B':
+                        clear_screen()
+                        ancestry_menu()
+                        ancestry_input = str(input('Select a race for more information:\n'))
+                    elif back_or_select == 's' or back_or_select == 'S':
+                        clear_screen()
+                        print('Copper dragon ancestry selected!')
+                        player_info['subrace'] = 'copper dragon'
+                        break
+
+                # gold
+                elif ancestry_input == 'g' or ancestry_input == 'G':
+                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    if back_or_select == 'b' or back_or_select == 'B':
+                        clear_screen()
+                        ancestry_menu()
+                        ancestry_input = str(input('Select a race for more information:\n'))
+                    elif back_or_select == 's' or back_or_select == 'S':
+                        clear_screen()
+                        print('Gold dragon ancestry selected!')
+                        player_info['subrace'] = 'gold dragon'
+                        break
+
+                # green
+                elif ancestry_input == 'e' or ancestry_input == 'E':
+                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    if back_or_select == 'b' or back_or_select == 'B':
+                        clear_screen()
+                        ancestry_menu()
+                        ancestry_input = str(input('Select a race for more information:\n'))
+                    elif back_or_select == 's' or back_or_select == 'S':
+                        clear_screen()
+                        print('Green dragon ancestry selected!')
+                        player_info['subrace'] = 'green dragon'
+                        break
+
+                # silver
+                elif ancestry_input == 's' or ancestry_input == 'S':
+                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    if back_or_select == 'b' or back_or_select == 'B':
+                        clear_screen()
+                        ancestry_menu()
+                        ancestry_input = str(input('Select a race for more information:\n'))
+                    elif back_or_select == 's' or back_or_select == 'S':
+                        clear_screen()
+                        print('Silver dragon ancestry selected!')
+                        player_info['subrace'] = 'silver dragon'
+                        break
+
+                # white
+                elif ancestry_input == 'w' or ancestry_input == 'W':
+                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    if back_or_select == 'b' or back_or_select == 'B':
+                        clear_screen()
+                        ancestry_menu()
+                        ancestry_input = str(input('Select a race for more information:\n'))
+                    elif back_or_select == 's' or back_or_select == 'S':
+                        clear_screen()
+                        print('White dragon ancestry selected!')
+                        player_info['subrace'] = 'white dragon'
+                        break
+
         else:
+            clear_screen()
             print('Please select B or S.')
 
     # dwarf
     if race_input == 'w' or race_input == 'W':
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             race_menu()
             race_input = str(input('Select a race for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Dwarf selected!')
             player_info['race'] = 'dwarf'
-            print(player_info)
             break
         else:
+            clear_screen()
             print('Please select B or S.')
 
     # elf
     if race_input == 'e' or race_input == 'E':
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             race_menu()
             race_input = str(input('Select a race for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Elf selected!')
             player_info['race'] = 'elf'
-            print(player_info)
             break
         else:
+            clear_screen()
             print('Please select B or S.')
 
     # gnome
     if race_input == 'g' or race_input == 'G':
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             race_menu()
             race_input = str(input('Select a race for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Gnome selected!')
             player_info['race'] = 'gnome'
-            print(player_info)
             break
         else:
+            clear_screen()
             print('Please select B or S.')
 
     # half-elf
     if race_input == 'h' or race_input == 'H':
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             race_menu()
             race_input = str(input('Select a race for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Half-Elf selected!')
             player_info['race'] = 'half-elf'
-            print(player_info)
             break
         else:
+            clear_screen()
             print('Please select B or S.')
 
     # half-orc
     if race_input == 'r' or race_input == 'R':
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             race_menu()
             race_input = str(input('Select a race for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Half-Orc selected!')
             player_info['race'] = 'half-orc'
-            print(player_info)
             break
         else:
+            clear_screen()
             print('Please select B or S.')
 
     # halfling
     if race_input == 'l' or race_input == 'L':
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             race_menu()
             race_input = str(input('Select a race for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Halfling selected!')
             player_info['race'] = 'halfling'
-            print(player_info)
             break
         else:
+            clear_screen()
             print('Please select B or S.')
 
     # human
     if race_input == 'm' or race_input == 'M':
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             race_menu()
             race_input = str(input('Select a race for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Human selected!')
             player_info['race'] = 'human'
-            print(player_info)
             break
         else:
+            clear_screen()
             print('Please select B or S.')
 
     # tiefling
     if race_input == 't' or race_input == 'T':
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             race_menu()
             race_input = str(input('Select a race for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Tiefling selected!')
             player_info['race'] = 'tiefling'
-            print(player_info)
             break
         else:
+            clear_screen()
             print('Please select B or S.')
+    else:
+        clear_screen()
+        print('Please select from the options below.')
+        race_menu()
+        race_input = str(input('Select a race for more information:\n'))
+        # break
 
 
 # CLASS INFO #
@@ -239,13 +427,16 @@ while True:
         print(fighter_info)
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             class_menu()
             class_input = str(input('Select a class for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Fighter selected!')
             player_info['class'] = 'fighter'
             break
         else:
+            clear_screen()
             print('Please select B or S.')
 
     # WIZARD
@@ -253,13 +444,16 @@ while True:
         print(wizard_info)
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             class_menu()
             class_input = str(input('Select a class for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Wizard selected!')
             player_info['class'] = 'wizard'
             break
         else:
+            clear_screen()
             print('Please select B or S.')
 
     # CLERIC
@@ -267,13 +461,16 @@ while True:
         print(cleric_info)
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             class_menu()
             class_input = str(input('Select a class for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Cleric selected!')
             player_info['class'] = 'cleric'
             break
         else:
+            clear_screen()
             print('Please select B or S.')
 
     # ROGUE
@@ -281,13 +478,16 @@ while True:
         print(rogue_info)
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             class_menu()
             class_input = str(input('Select a class for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Rogue selected!')
             player_info['class'] = 'rogue'
             break
         else:
+            clear_screen()
             print('Please select B or S.')
 
     # RANGER
@@ -295,13 +495,16 @@ while True:
         print(ranger_info)
         back_or_select = str(input('Type B to go back or S to select this class:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
+            clear_screen()
             class_menu()
             class_input = str(input('Select a class for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
+            clear_screen()
             print('Ranger selected!')
             player_info['class'] = 'ranger'
             break
         else:
+            clear_screen()
             print('Please select B or S.')
     elif class_input == 'q' or class_input == 'Q':
         sys.exit()
@@ -310,11 +513,13 @@ while True:
         class_menu()
         class_input = str(input('Select a class for more information:\n'))
 
+
 # CALCULATIONS #
 # dragonborn
 if player_info['race'] == 'dragonborn':
     player_stats['str'] += 2
     player_stats['cha'] += 1
+    player_stats['special'].append('breath weapon')
     player_stats['languages'].append('draconic')
 
 # dwarf
@@ -322,7 +527,6 @@ if player_info['race'] == 'dwarf':
     player_stats['con'] += 2
     player_stats['special'].append('darkvision')
     player_stats['resistances_immunities'].append('poison resist')
-    player_stats['proficiencies'].append('poison resist')
     player_stats['languages'].append('dwarvish')
 
 # elf
@@ -330,7 +534,7 @@ if player_info['race'] == 'elf':
     player_stats['dex'] += 2
     player_stats['special'].append('darkvision')
     player_stats['resistances_immunities'].append('sleep immunity')
-    player_stats['proficiencies'].append('perception')
+    player_stats['proficiencies']['skills'].append('perception')
 
 # gnome
 if player_info['race'] == 'gnome':
@@ -347,7 +551,7 @@ if player_info['race'] == 'half-orc':
     player_stats['str'] += 2
     player_stats['con'] += 1
     player_stats['special'].append('darkvision')
-    player_stats['proficiencies'].append('intimidation')
+    player_stats['proficiencies']['skills'].append('intimidation')
 
 # human = N/A
 if player_info['race'] == 'human':
@@ -371,5 +575,8 @@ if player_info['race'] == 'tiefling':
 
 print(player_stats)
 
-# to add:
-# draconic ancestry
+######################################################################################
+#################################### TO DO LIST ######################################
+######################################################################################
+# fix non-standard B/S selection
+# abilities/stats of subraces
