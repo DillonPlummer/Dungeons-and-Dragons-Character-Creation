@@ -1,6 +1,13 @@
 import sys
 import os
+
+# VARIABLES #
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 # DISCLAIMER #
+clear_screen()
 # print('DISCLAIMER:\n'
 #       'Wizards of the Coast, Dungeons & Dragons, D&D, and their logos are\n'
 #       'trademarks of Wizards of the Coast LLC in the United States and other\n'
@@ -11,20 +18,17 @@ import os
 #       )
 # print('#################################################################################\n')
 
-
-# VARIABLES #
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-
 # PROGRAM #
-print('\nWelcome, adventurer, to Dungeons & Dragons!\n')
+print('@!!!####################################################!!!@')
+print('@!##### WELCOME, ADVENTURER, TO DUNGEONS & DRAGNONS! #####!@')
+print('@!!!####################################################!!!@\n')
 
-player_info = {'race': 'dwarf',
-               'subrace': 'hill dwarf',
-               'class': 'fighter',
-               'background': 'folk hero',
+player_info = {'race': '',
+               'subrace': '',
+               'class': '',
+               'background': '',
                }
+
 player_stats = {'hp': 10,
                 'ac': 0,
                 'str': 0,
@@ -59,7 +63,7 @@ def race_menu():
     print('M - Human')
     print('T - Tiefling')
 
-
+# DRACONIC ANCESTRY MENU #
 def ancestry_menu():
     print('\nCHOOSE WISELY')
     print('\nDraconic Ancestry:')
@@ -73,28 +77,87 @@ def ancestry_menu():
     print('S - Silver Dragon')
     print('W - White Dragon')
 
-
+# RACE INFO #
 dragonborn_info = '\nTHE DRAGONBORN:\n'\
-                  'Dragonborn look very much like dragons standing erect\n' \
-                  'in humanoid form, though they lack wings or a tail.\n'
+                  'Dragonborn look very much like dragons standing upright\n' \
+                  'in humanoid form, though they lack wings or a tail. To any\n' \
+                  'dragonborn, the clan is more important than life itself.\n' \
+                  'Dragonborn owe their devotion and respect to their clan above\n' \
+                  'all else, even the gods. Each dragonborn’s conduct reflects\n' \
+                  'on the honor of his or her clan, and bringing dishonor to the\n' \
+                  'clan can result in expulsion and exile. Each dragonborn knows\n' \
+                  'his or her station and duties within the clan, and honor\n' \
+                  'demands maintaining the bounds of that position.\n'
 
-dwarf_info = '\nTHE DWARF:\n'\
+dwarf_info = '\nTHE DWARF:\n' \
+             'Bold and hardy, dwarves are known as skilled warriors, miners,\n' \
+             'and workers of stone and metal. Though they stand well under 5\n' \
+             'feet tall, dwarves are so broad and compact that they can weigh\n' \
+             'as much as a human standing nearly two feet taller. Their courage\n' \
+             'and endurance are also easily a match for any of the larger folk.\n'
 
-elf_info = '\nTHE ELF:\n'\
+elf_info = '\nTHE ELF:\n' \
+           'Elves are a magical people of otherworldly grace, living in the world\n' \
+           'but not entirely part of it. They live in places of ethereal beauty,\n' \
+           'in the midst of ancient forests or in silvery spires glittering with faerie\n' \
+           'light, where soft music drifts through the air and gentle fragrances waft\n' \
+           'on the breeze. Elves love nature and magic, art and artistry, music and poetry,\n' \
+           'and the good things of the world.\n'
 
-gnome_info = '\nTHE GNOME:\n'\
+gnome_info = '\nTHE GNOME:\n' \
+             'A constant hum of busy activity pervades the warrens and neighborhoods\n' \
+             'where gnomes form their close-knit communities. Louder sounds punctuate\n' \
+             'the hum: a crunch of grinding gears here, a minor explosion there, a yelp of\n' \
+             'surprise or triumph, and especially bursts of laughter. Gnomes take delight\n' \
+             'in life, enjoying every moment of invention, exploration, investigation,\n' \
+             'creation, and play.\n'
 
-half_elf_info = '\nTHE HALF_ELF:\n'\
+half_elf_info = '\nTHE HALF_ELF:\n' \
+                'Walking in two worlds but truly belonging to neither, half-elves combine\n' \
+                'what some say are the best qualities of their elf and human parents: human\n' \
+                'curiosity, inventiveness, and ambition tempered by the refined senses, love of\n' \
+                'nature, and artistic tastes of the elves. Some half-elves live among humans,\n' \
+                'set apart by their emotional and physical differences, watching friends and loved\n' \
+                'ones age while time barely touches them. Others live with the elves, growing\n' \
+                'restless as they reach adulthood in the timeless elven realms, while their peers\n' \
+                'continue to live as children. Many half-elves, unable to fit into either society,\n' \
+                'choose lives of solitary wandering or join with other misfits and outcasts in the\n' \
+                'adventuring life.\n'
 
-halfling_info = '\nTHE HALFING:\n'\
+halfling_info = '\nTHE HALFLING:\n' \
+                'The comforts of home are the goals of most halflings’ lives: a place to settle in\n' \
+                'peace and quiet, far from marauding monsters and clashing armies; a blazing fire and a\n' \
+                'generous meal; fine drink and fine conversation. Though some halflings live out their\n' \
+                'days in remote agricultural communities, others form nomadic bands that travel constantly,\n' \
+                'lured by the open road and the wide horizon to discover the wonders of new lands and\n' \
+                'peoples. But even these wanderers love peace, food, hearth, and home, though home might\n' \
+                'be a wagon jostling along a dirt road or a raft floating downriver.\n'
 
-half_orc_info = '\nTHE HALF-ORC:\n'\
+half_orc_info = '\nTHE HALF-ORC:\n' \
+                'Whether united under the leadership of a mighty warlock or having fought to a standstill\n' \
+                'after years of conflict, orc and human tribes sometimes form alliances, joining forces\n' \
+                'into a larger horde to the terror of civilized lands nearby. When these alliances are\n' \
+                'sealed by marriages, half-orcs are born. Some half-orcs rise to become proud chiefs of\n' \
+                'orc tribes, their human blood giving them an edge over their full-blooded orc rivals. Some\n' \
+                'venture into the world to prove their worth among humans and other more civilized races.\n' \
+                'Many of these become adventurers, achieving greatness for their mighty deeds and notoriety\n' \
+                'for their barbaric customs and savage fury.\n'
 
-human_info = '\nTHE HUMAN:\n'\
+human_info = '\nTHE HUMAN:\n' \
+             'In the reckonings of most worlds, humans are the youngest of the common races, late to arrive\n' \
+             'on the world scene and short-lived in comparison to dwarves, elves, and dragons. Perhaps it\n' \
+             'is because of their shorter lives that they strive to achieve as much as they can in the years\n' \
+             'they are given. Or maybe they feel they have something to prove to the elder races, and that’s\n' \
+             'why they build their mighty empires on the foundation of conquest and trade. Whatever drives them,\n' \
+             'humans are the innovators, the achievers, and the pioneers of the worlds.\n'
 
-tiefling_info = '\nTHE TIEFLING:\n'\
-
-
+tiefling_info = '\nTHE TIEFLING:\n' \
+                'To be greeted with stares and whispers, to suffer violence and insult on the street, to see\n' \
+                'mistrust and fear in every eye: this is the lot of the tiefling. And to twist the knife,\n' \
+                'tieflings know that this is because a pact struck generations ago infused the essence of\n' \
+                'Asmodeus—overlord of the Nine Hells—into their bloodline. Their appearance and their nature are\n' \
+                'not their fault but the result of an ancient sin, for which they and their children and their\n' \
+                'children’s children will always be held accountable.\n'
 
 race_menu()
 race_input = str(input('Select a race:\n'))
@@ -105,13 +168,14 @@ while True:
     # dragonborn
     if race_input == 'd' or race_input == 'D':
         print(dragonborn_info)
-        back_or_select = str(input('Type B to go back or S to select this class:\n'))
+        back_or_select = str(input('Type B to go back or S to select this race:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
             clear_screen()
             race_menu()
             race_input = str(input('Select a race for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
             clear_screen()
+            player_info['race'] = 'dragonborn'
             print('Dragonborn selected!')
 
             # DRACONIC ANCESTRY MENU #
@@ -121,11 +185,11 @@ while True:
 
                 # black
                 if ancestry_input == 'b' or ancestry_input == 'B':
-                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    back_or_select = str(input('Type B to go back or S to select this ancestry:\n'))
                     if back_or_select == 'b' or back_or_select == 'B':
                         clear_screen()
                         ancestry_menu()
-                        ancestry_input = str(input('Select a race for more information:\n'))
+                        ancestry_input = str(input('Select a ancestry for more information:\n'))
                     elif back_or_select == 's' or back_or_select == 'S':
                         clear_screen()
                         print('Black dragon ancestry selected!')
@@ -134,11 +198,11 @@ while True:
 
                 # blue
                 elif ancestry_input == 'l' or ancestry_input == 'L':
-                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    back_or_select = str(input('Type B to go back or S to select this ancestry:\n'))
                     if back_or_select == 'b' or back_or_select == 'B':
                         clear_screen()
                         ancestry_menu()
-                        ancestry_input = str(input('Select a race for more information:\n'))
+                        ancestry_input = str(input('Select a ancestry for more information:\n'))
                     elif back_or_select == 's' or back_or_select == 'S':
                         clear_screen()
                         print('Blue dragon ancestry selected!')
@@ -147,11 +211,11 @@ while True:
 
                 # brass
                 elif ancestry_input == 'r' or ancestry_input == 'R':
-                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    back_or_select = str(input('Type B to go back or S to select this ancestry:\n'))
                     if back_or_select == 'b' or back_or_select == 'B':
                         clear_screen()
                         ancestry_menu()
-                        ancestry_input = str(input('Select a race for more information:\n'))
+                        ancestry_input = str(input('Select a ancestry for more information:\n'))
                     elif back_or_select == 's' or back_or_select == 'S':
                         clear_screen()
                         print('Brass dragon ancestry selected!')
@@ -160,11 +224,11 @@ while True:
 
                 # bronze
                 elif ancestry_input == 'o' or ancestry_input == 'O':
-                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    back_or_select = str(input('Type B to go back or S to select this ancestry:\n'))
                     if back_or_select == 'b' or back_or_select == 'B':
                         clear_screen()
                         ancestry_menu()
-                        ancestry_input = str(input('Select a race for more information:\n'))
+                        ancestry_input = str(input('Select a ancestry for more information:\n'))
                     elif back_or_select == 's' or back_or_select == 'S':
                         clear_screen()
                         print('Bronze dragon ancestry selected!')
@@ -173,11 +237,11 @@ while True:
 
                 # copper
                 elif ancestry_input == 'c' or ancestry_input == 'C':
-                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    back_or_select = str(input('Type B to go back or S to select this ancestry:\n'))
                     if back_or_select == 'b' or back_or_select == 'B':
                         clear_screen()
                         ancestry_menu()
-                        ancestry_input = str(input('Select a race for more information:\n'))
+                        ancestry_input = str(input('Select a ancestry for more information:\n'))
                     elif back_or_select == 's' or back_or_select == 'S':
                         clear_screen()
                         print('Copper dragon ancestry selected!')
@@ -186,11 +250,11 @@ while True:
 
                 # gold
                 elif ancestry_input == 'g' or ancestry_input == 'G':
-                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    back_or_select = str(input('Type B to go back or S to select this ancestry:\n'))
                     if back_or_select == 'b' or back_or_select == 'B':
                         clear_screen()
                         ancestry_menu()
-                        ancestry_input = str(input('Select a race for more information:\n'))
+                        ancestry_input = str(input('Select a ancestry for more information:\n'))
                     elif back_or_select == 's' or back_or_select == 'S':
                         clear_screen()
                         print('Gold dragon ancestry selected!')
@@ -199,11 +263,11 @@ while True:
 
                 # green
                 elif ancestry_input == 'e' or ancestry_input == 'E':
-                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    back_or_select = str(input('Type B to go back or S to select this ancestry:\n'))
                     if back_or_select == 'b' or back_or_select == 'B':
                         clear_screen()
                         ancestry_menu()
-                        ancestry_input = str(input('Select a race for more information:\n'))
+                        ancestry_input = str(input('Select a ancestry for more information:\n'))
                     elif back_or_select == 's' or back_or_select == 'S':
                         clear_screen()
                         print('Green dragon ancestry selected!')
@@ -212,11 +276,11 @@ while True:
 
                 # silver
                 elif ancestry_input == 's' or ancestry_input == 'S':
-                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    back_or_select = str(input('Type B to go back or S to select this ancestry:\n'))
                     if back_or_select == 'b' or back_or_select == 'B':
                         clear_screen()
                         ancestry_menu()
-                        ancestry_input = str(input('Select a race for more information:\n'))
+                        ancestry_input = str(input('Select a ancestry for more information:\n'))
                     elif back_or_select == 's' or back_or_select == 'S':
                         clear_screen()
                         print('Silver dragon ancestry selected!')
@@ -225,24 +289,30 @@ while True:
 
                 # white
                 elif ancestry_input == 'w' or ancestry_input == 'W':
-                    back_or_select = str(input('Type B to go back or S to select this class:\n'))
+                    back_or_select = str(input('Type B to go back or S to select this ancestry:\n'))
                     if back_or_select == 'b' or back_or_select == 'B':
                         clear_screen()
                         ancestry_menu()
-                        ancestry_input = str(input('Select a race for more information:\n'))
+                        ancestry_input = str(input('Select a ancestry for more information:\n'))
                     elif back_or_select == 's' or back_or_select == 'S':
                         clear_screen()
                         print('White dragon ancestry selected!')
                         player_info['subrace'] = 'white dragon'
                         break
-
+                else:
+                    clear_screen()
+                    print('\nPlease select from the options below.\n')
+                    ancestry_menu()
+                    ancestry_input = str(input('Select an ancestry for more information:\n'))
         else:
             clear_screen()
             print('Please select B or S.')
+        break
 
     # dwarf
     if race_input == 'w' or race_input == 'W':
-        back_or_select = str(input('Type B to go back or S to select this class:\n'))
+        print(dwarf_info)
+        back_or_select = str(input('Type B to go back or S to select this race:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
             clear_screen()
             race_menu()
@@ -258,7 +328,8 @@ while True:
 
     # elf
     if race_input == 'e' or race_input == 'E':
-        back_or_select = str(input('Type B to go back or S to select this class:\n'))
+        print(elf_info)
+        back_or_select = str(input('Type B to go back or S to select this race:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
             clear_screen()
             race_menu()
@@ -274,7 +345,8 @@ while True:
 
     # gnome
     if race_input == 'g' or race_input == 'G':
-        back_or_select = str(input('Type B to go back or S to select this class:\n'))
+        print(gnome_info)
+        back_or_select = str(input('Type B to go back or S to select this race:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
             clear_screen()
             race_menu()
@@ -290,7 +362,8 @@ while True:
 
     # half-elf
     if race_input == 'h' or race_input == 'H':
-        back_or_select = str(input('Type B to go back or S to select this class:\n'))
+        print(half_elf_info)
+        back_or_select = str(input('Type B to go back or S to select this race:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
             clear_screen()
             race_menu()
@@ -306,7 +379,8 @@ while True:
 
     # half-orc
     if race_input == 'r' or race_input == 'R':
-        back_or_select = str(input('Type B to go back or S to select this class:\n'))
+        print(half_orc_info)
+        back_or_select = str(input('Type B to go back or S to select this race:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
             clear_screen()
             race_menu()
@@ -322,7 +396,8 @@ while True:
 
     # halfling
     if race_input == 'l' or race_input == 'L':
-        back_or_select = str(input('Type B to go back or S to select this class:\n'))
+        print(halfling_info)
+        back_or_select = str(input('Type B to go back or S to select this race:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
             clear_screen()
             race_menu()
@@ -338,7 +413,8 @@ while True:
 
     # human
     if race_input == 'm' or race_input == 'M':
-        back_or_select = str(input('Type B to go back or S to select this class:\n'))
+        print(human_info)
+        back_or_select = str(input('Type B to go back or S to select this race:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
             clear_screen()
             race_menu()
@@ -354,7 +430,8 @@ while True:
 
     # tiefling
     if race_input == 't' or race_input == 'T':
-        back_or_select = str(input('Type B to go back or S to select this class:\n'))
+        print(tiefling_info)
+        back_or_select = str(input('Type B to go back or S to select this race:\n'))
         if back_or_select == 'b' or back_or_select == 'B':
             clear_screen()
             race_menu()
@@ -369,10 +446,9 @@ while True:
             print('Please select B or S.')
     else:
         clear_screen()
-        print('Please select from the options below.')
+        print('\nPlease select from the options below.\n')
         race_menu()
         race_input = str(input('Select a race for more information:\n'))
-        # break
 
 
 # CLASS INFO #
@@ -509,6 +585,7 @@ while True:
     elif class_input == 'q' or class_input == 'Q':
         sys.exit()
     else:
+        clear_screen()
         print('\nPlease select from the options below.\n')
         class_menu()
         class_input = str(input('Select a class for more information:\n'))
@@ -573,10 +650,12 @@ if player_info['race'] == 'tiefling':
     player_stats['special'].append('darkvision')
     player_stats['resistances_immunities'].append('fire resist')
 
-print(player_stats)
+for key, value in player_info.items():
+    print(key, ':', value, '\n', end='')
+
+
 
 ######################################################################################
 #################################### TO DO LIST ######################################
 ######################################################################################
-# fix non-standard B/S selection
 # abilities/stats of subraces
