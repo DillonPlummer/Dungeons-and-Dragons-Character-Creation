@@ -90,26 +90,29 @@ dragonborn_info = '\nTHE DRAGONBORN:\n'\
                   'demands maintaining the bounds of that position.\n'
 
 dwarf_info = '\nTHE DWARF:\n' \
-             'Bold and hardy, dwarves are known as skilled warriors, miners,\n' \
-             'and workers of stone and metal. Though they stand well under 5\n' \
-             'feet tall, dwarves are so broad and compact that they can weigh\n' \
-             'as much as a human standing nearly two feet taller. Their courage\n' \
-             'and endurance are also easily a match for any of the larger folk.\n'
+             'Bold and hardy, dwarves are known as skilled warriors,\n' \
+             'miners, and workers of stone and metal. Though they\n' \
+             'stand well under 5 feet tall, dwarves are so broad and\n' \
+             'compact that they can weigh as much as a human standing\n' \
+             'nearly two feet taller. Their courage and endurance are\n' \
+             'also easily a match for any of the larger folk.\n'
 
 elf_info = '\nTHE ELF:\n' \
-           'Elves are a magical people of otherworldly grace, living in the world\n' \
-           'but not entirely part of it. They live in places of ethereal beauty,\n' \
-           'in the midst of ancient forests or in silvery spires glittering with faerie\n' \
-           'light, where soft music drifts through the air and gentle fragrances waft\n' \
-           'on the breeze. Elves love nature and magic, art and artistry, music and poetry,\n' \
-           'and the good things of the world.\n'
+           'Elves are a magical people of otherworldly grace, living\n' \
+           'in the world, but not entirely part of it. They live in\n' \
+           'places of ethereal beauty, in the midst of ancient forests,\n' \
+           'or in silvery spires glittering with faerie light, where\n' \
+           'soft music drifts through the air and gentle fragrances waft\n' \
+           'on the breeze. Elves love nature and magic, art and artistry,\n' \
+           'music and poetry and the good things of the world.\n'
 
 gnome_info = '\nTHE GNOME:\n' \
-             'A constant hum of busy activity pervades the warrens and neighborhoods\n' \
-             'where gnomes form their close-knit communities. Louder sounds punctuate\n' \
-             'the hum: a crunch of grinding gears here, a minor explosion there, a yelp of\n' \
-             'surprise or triumph, and especially bursts of laughter. Gnomes take delight\n' \
-             'in life, enjoying every moment of invention, exploration, investigation,\n' \
+             'A constant hum of busy activity pervades the warrens and\n' \
+             'neighborhoods where gnomes form their close-knit communities.\n' \
+             'Louder sounds punctuate the hum: a crunch of grinding gears here,\n' \
+             ' a minor explosion there, a yelp of surprise or triumph, and\n' \
+             'especially bursts of laughter. Gnomes take delight in life,\n' \
+             'enjoying every moment of invention, exploration, investigation,\n' \
              'creation, and play.\n'
 
 half_elf_info = '\nTHE HALF_ELF:\n' \
@@ -159,6 +162,7 @@ tiefling_info = '\nTHE TIEFLING:\n' \
                 'not their fault but the result of an ancient sin, for which they and their children and their\n' \
                 'children’s children will always be held accountable.\n'
 
+clear_screen()
 race_menu()
 race_input = str(input('Select a race:\n'))
 
@@ -582,8 +586,11 @@ while True:
         else:
             clear_screen()
             print('Please select B or S.')
+
+    # QUIT
     elif class_input == 'q' or class_input == 'Q':
         sys.exit()
+
     else:
         clear_screen()
         print('\nPlease select from the options below.\n')
@@ -650,6 +657,7 @@ if player_info['race'] == 'tiefling':
     player_stats['special'].append('darkvision')
     player_stats['resistances_immunities'].append('fire resist')
 
+print('\n')
 for key, value in player_info.items():
     print(key, ':', value, '\n', end='')
 
@@ -658,4 +666,10 @@ for key, value in player_info.items():
 ######################################################################################
 #################################### TO DO LIST ######################################
 ######################################################################################
-# abilities/stats of subraces
+# FIX - looping back to race menu after re-selecting same race - #
+# i.e., select dragonborn, press B, select dragonborn again, and
+# it re- displays the race select menu and prompts you to "select
+# from the options below" -- maybe a problem with the break statement?
+
+# add subraces
+# add abilities/stats of subraces
