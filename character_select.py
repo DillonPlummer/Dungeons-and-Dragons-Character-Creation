@@ -77,6 +77,56 @@ def ancestry_menu():
     print('S - Silver Dragon')
     print('W - White Dragon')
 
+# DWARF SUB MENU #
+def dwarf_sub_menu():
+    print('\nCHOOSE WISELY')
+    print('\nDwarf subraces:')
+    print('H - Hill Dwarf')
+    print('M - Mountain Dwarf')
+    print('G - Grey Dwarf (Duergar)')
+
+# ELF SUB MENU #
+def elf_sub_menu():
+    print('\nCHOOSE WISELY')
+    print('\nElf subraces:')
+    print('H - High Elf')
+    print('W - Wood Elf')
+    print('D - Dark Elf (Drow)')
+
+# GNOME SUB MENU #
+def gnome_sub_menu():
+    print('\nCHOOSE WISELY')
+    print('\nGnome subraces:')
+    print('F - Forest Gnome')
+    print('R - Rock Gnome')
+    print('D - Deep Gnome')
+
+# HALF-ELF SUB MENU #
+def half_elf_sub_menu():
+    print('\nCHOOSE WISELY')
+    print('\nHalf-Elf subraces:')
+    print('W - Wood Half-Elf')
+    print('S - Sun/Moon Half-Elf')
+    print('D - Dark Half-Elf')
+    print('A - Aquatic Half-Elf')
+
+# HALF-ELF SUB MENU #
+def halfling_sub_menu():
+    print('\nCHOOSE WISELY')
+    print('\nHalfling subraces:')
+    print('L - Lightfoot Halfling')
+    print('S - Stout Halfling')
+    print('G - Ghostwise Halfling')
+
+# TIEFLING SUB MENU #
+def tiefling_sub_menu():
+    print('\nCHOOSE WISELY')
+    print('\nTiefling subraces:')
+    print('F - Feral Tiefling')
+    print('D - Devil-Tongue Tiefling')
+    print('W - Winged Tiefling')
+    print('H - Hellfire Tiefling')
+
 # RACE INFO #
 dragonborn_info = '\nTHE DRAGONBORN:\n'\
                   'Dragonborn look very much like dragons standing upright\n' \
@@ -109,58 +159,71 @@ elf_info = '\nTHE ELF:\n' \
 gnome_info = '\nTHE GNOME:\n' \
              'A constant hum of busy activity pervades the warrens and\n' \
              'neighborhoods where gnomes form their close-knit communities.\n' \
-             'Louder sounds punctuate the hum: a crunch of grinding gears here,\n' \
-             ' a minor explosion there, a yelp of surprise or triumph, and\n' \
+             'Louder sounds punctuate the hum: a crunch of grinding gears\n' \
+             'here, a minor explosion there, a yelp of surprise or triumph, and\n' \
              'especially bursts of laughter. Gnomes take delight in life,\n' \
              'enjoying every moment of invention, exploration, investigation,\n' \
              'creation, and play.\n'
 
 half_elf_info = '\nTHE HALF_ELF:\n' \
-                'Walking in two worlds but truly belonging to neither, half-elves combine\n' \
-                'what some say are the best qualities of their elf and human parents: human\n' \
-                'curiosity, inventiveness, and ambition tempered by the refined senses, love of\n' \
-                'nature, and artistic tastes of the elves. Some half-elves live among humans,\n' \
-                'set apart by their emotional and physical differences, watching friends and loved\n' \
-                'ones age while time barely touches them. Others live with the elves, growing\n' \
-                'restless as they reach adulthood in the timeless elven realms, while their peers\n' \
-                'continue to live as children. Many half-elves, unable to fit into either society,\n' \
-                'choose lives of solitary wandering or join with other misfits and outcasts in the\n' \
-                'adventuring life.\n'
+                'Walking in two worlds but truly belonging to neither,\n' \
+                'half-elves combine what some say are the best qualities\n' \
+                'of their elf and human parents: human curiosity, inventiveness,\n' \
+                'and ambition tempered by the refined senses, love of nature,\n' \
+                'and artistic tastes of the elves. Some half-elves live among\n' \
+                'humans, set apart by their emotional and physical differences,\n' \
+                'watching friends and loved ones age while time barely touches\n' \
+                'them. Others live with the elves growing restless as they reach\n' \
+                'adulthood in the timeless elven realms while their peers continue\n' \
+                'to live as children. Many half-elves unable to fit into either\n' \
+                'society, choose lives of solitary wandering or join with other\n' \
+                'misfits and outcasts in the adventuring life.\n'
 
 halfling_info = '\nTHE HALFLING:\n' \
-                'The comforts of home are the goals of most halflings’ lives: a place to settle in\n' \
-                'peace and quiet, far from marauding monsters and clashing armies; a blazing fire and a\n' \
-                'generous meal; fine drink and fine conversation. Though some halflings live out their\n' \
-                'days in remote agricultural communities, others form nomadic bands that travel constantly,\n' \
-                'lured by the open road and the wide horizon to discover the wonders of new lands and\n' \
-                'peoples. But even these wanderers love peace, food, hearth, and home, though home might\n' \
-                'be a wagon jostling along a dirt road or a raft floating downriver.\n'
+                'The comforts of home are the goals of most halflings’ lives:\n' \
+                'a place to settle in peace and quiet, far from marauding\n' \
+                'monsters and clashing armies; a blazing fire and a generous meal;\n' \
+                'fine drink and fine conversation. Though some halflings live out\n' \
+                'their days in remote agricultural communities, others form\n' \
+                'nomadic bands that travel constantly, lured by the open road\n' \
+                'and the wide horizon to discover the wonders of new lands and peoples.\n' \
+                'But even these wanderers love peace, food, hearth, and home, though\n' \
+                'home might be a wagon jostling along a dirt road or a raft floating\n' \
+                'downriver.\n'
 
 half_orc_info = '\nTHE HALF-ORC:\n' \
-                'Whether united under the leadership of a mighty warlock or having fought to a standstill\n' \
-                'after years of conflict, orc and human tribes sometimes form alliances, joining forces\n' \
-                'into a larger horde to the terror of civilized lands nearby. When these alliances are\n' \
-                'sealed by marriages, half-orcs are born. Some half-orcs rise to become proud chiefs of\n' \
-                'orc tribes, their human blood giving them an edge over their full-blooded orc rivals. Some\n' \
-                'venture into the world to prove their worth among humans and other more civilized races.\n' \
-                'Many of these become adventurers, achieving greatness for their mighty deeds and notoriety\n' \
-                'for their barbaric customs and savage fury.\n'
+                'Whether united under the leadership of a mighty warlock or\n' \
+                'having fought to a standstill after years of conflict, orc\n' \
+                'and human tribes sometimes form alliances, joining forces\n' \
+                'into a larger horde to the terror of civilized lands nearby. When\n' \
+                'these alliances are sealed by marriages, half-orcs are born. Some\n' \
+                'half-orcs rise to become proud chiefs of orc tribes, their human\n' \
+                'blood giving them an edge over their full-blooded orc rivals. Some\n' \
+                'venture into the world to prove their worth among humans and other\n' \
+                'more civilized races. Many of these become adventurers, achieving\n' \
+                'greatness for their mighty deeds and notoriety for their barbaric\n' \
+                'customs and savage fury.\n'
 
 human_info = '\nTHE HUMAN:\n' \
-             'In the reckonings of most worlds, humans are the youngest of the common races, late to arrive\n' \
-             'on the world scene and short-lived in comparison to dwarves, elves, and dragons. Perhaps it\n' \
-             'is because of their shorter lives that they strive to achieve as much as they can in the years\n' \
-             'they are given. Or maybe they feel they have something to prove to the elder races, and that’s\n' \
-             'why they build their mighty empires on the foundation of conquest and trade. Whatever drives them,\n' \
-             'humans are the innovators, the achievers, and the pioneers of the worlds.\n'
+             'In the reckonings of most worlds, humans are the youngest of the\n' \
+             'common races, late to arrive on the world scene and short-lived in\n' \
+             'comparison to dwarves, elves, and dragons. Perhaps it is because of\n' \
+             'their shorter lives that they strive to achieve as much as they can\n' \
+             'in the years they are given. Or maybe they feel they have something to\n' \
+             'prove to the elder races, and that’s why they build their mighty\n' \
+             'empires on the foundation of conquest and trade. Whatever drives them,\n' \
+             'humans are the innovators, the achievers, and the pioneers of the worlds.'
 
 tiefling_info = '\nTHE TIEFLING:\n' \
-                'To be greeted with stares and whispers, to suffer violence and insult on the street, to see\n' \
-                'mistrust and fear in every eye: this is the lot of the tiefling. And to twist the knife,\n' \
-                'tieflings know that this is because a pact struck generations ago infused the essence of\n' \
-                'Asmodeus—overlord of the Nine Hells—into their bloodline. Their appearance and their nature are\n' \
-                'not their fault but the result of an ancient sin, for which they and their children and their\n' \
-                'children’s children will always be held accountable.\n'
+                'To be greeted with stares and whispers, to suffer violence\n' \
+                'and insult on the street, to see mistrust and fear in every\n' \
+                'eye: this is the lot of the tiefling. And to twist the knife,\n' \
+                'tieflings know that this is because a pact struck generations ago\n' \
+                'infused the essence of Asmodeus—overlord of the Nine Hells—into\n' \
+                'their bloodline. Their appearance and their nature are not their\n' \
+                'fault but the result of an ancient sin, for which they and their\n' \
+                'children and their children’s children will always be held\n' \
+                'accountable.\n'
 
 clear_screen()
 race_menu()
@@ -323,12 +386,36 @@ while True:
             race_input = str(input('Select a race for more information:\n'))
         elif back_or_select == 's' or back_or_select == 'S':
             clear_screen()
-            print('Dwarf selected!')
             player_info['race'] = 'dwarf'
-            break
+            print('Dwarf selected!')
+
+            # DWARF SUBRACE MENU #
+            dwarf_sub_menu()
+            dwarf_sub_input = str(input('Select a subrace:\n'))
+            while True:
+
+                # hill
+                if dwarf_sub_input == 'h' or dwarf_sub_input == 'H':
+                    print('CON +2 and WIS +1')
+                    back_or_select = str(input('Type B to go back or S to select this subrace:\n'))
+                    if back_or_select == 'b' or back_or_select == 'B':
+                        clear_screen()
+                        dwarf_sub_menu()
+                        dwarf_sub_input = str(input('Select a subrace for more information:\n'))
+                    elif back_or_select == 's' or back_or_select == 'S':
+                        clear_screen()
+                        print('Hill Dwarf subrace selected!')
+                        player_info['subrace'] = 'hill dwarf'
+                        break
+                    else:
+                        clear_screen()
+                        print('\nPlease select from the options below.\n')
+                        dwarf_sub_menu()
+                        dwarf_sub_input = str(input('Select a subrace for more information:\n'))
         else:
             clear_screen()
             print('Please select B or S.')
+        break
 
     # elf
     if race_input == 'e' or race_input == 'E':
@@ -666,10 +753,4 @@ for key, value in player_info.items():
 ######################################################################################
 #################################### TO DO LIST ######################################
 ######################################################################################
-# FIX - looping back to race menu after re-selecting same race - #
-# i.e., select dragonborn, press B, select dragonborn again, and
-# it re- displays the race select menu and prompts you to "select
-# from the options below" -- maybe a problem with the break statement?
-
-# add subraces
-# add abilities/stats of subraces
+# abilities/stats of subraces
